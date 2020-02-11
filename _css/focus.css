@@ -1,0 +1,111 @@
+header, nav, section, article, aside, footer {
+  display: block;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-size: 100%;
+}
+
+:root {
+  --primary: steelblue;
+  --grey: rgba(0, 0, 0, .6);
+  --secondary: gold;
+  --hover: #366084;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+body .wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  -ms-grid-columns: (minmax(min-content, 30vw))[2];
+      grid-template-columns: repeat(2, minmax(-webkit-min-content, 30vw));
+      grid-template-columns: repeat(2, minmax(min-content, 30vw));
+  grid-gap: 0 1em;
+}
+
+body .wrapper .card {
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  padding: 3em 2em;
+  background: var(--secondary);
+}
+
+body .wrapper .card:nth-of-type(2) {
+  --primary: gold;
+  --grey: white;
+  --secondary: steelblue;
+  --hover: #ffbc00;
+}
+
+body .wrapper .card h2 {
+  font: 900 1rem 'arial-black', sans-serif;
+  color: var(--secondary);
+  background: var(--primary);
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: .5em 1em;
+  border-radius: .25em;
+  -webkit-box-shadow: 0 0 0 3px var(--secondary), 0 0 0 5px var(--primary);
+          box-shadow: 0 0 0 3px var(--secondary), 0 0 0 5px var(--primary);
+}
+
+body .wrapper .card p {
+  font: 100 .75rem/1.6 'helvetica-neue', sans-serif;
+  margin: 1em 0;
+  color: var(--grey);
+}
+
+body .wrapper .card p a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+body .wrapper .card p a:hover {
+  color: var(--secondary);
+  background: var(--primary);
+}
+
+body .wrapper .card p a:focus {
+  outline: 2px solid var(--primary);
+}
+
+body .wrapper .card button {
+  border: 0;
+  outline: 0;
+  color: white;
+  background: var(--primary);
+  padding: 1em;
+  cursor: pointer;
+  border-radius: 1.75em;
+}
+
+body .wrapper .card button:hover {
+  background: var(--hover);
+}
+
+body .wrapper .card button:focus {
+  -webkit-box-shadow: 0 0 0 3px var(--secondary), 0 0 0 5px var(--primary);
+          box-shadow: 0 0 0 3px var(--secondary), 0 0 0 5px var(--primary);
+}
+
+body .wrapper .card button::-moz-focus-inner {
+  border: 0;
+}
